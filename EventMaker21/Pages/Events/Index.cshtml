@@ -1,0 +1,55 @@
+﻿@page
+@using EventMaker21.Models
+@model EventMaker21.Pages.Events.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index  -  oversigt over events i Danmark</h1>
+
+<p>Der er @Model.Events.Count events i Danmark registreret i systemet</p>
+
+<h2><a asp-page="CreateEvent" >Create Event</a></h2>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Date
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Events)
+    {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.City
+            </td>
+            <td>
+                @item.DateTime.ToShortDateString() @item.DateTime.ToShortTimeString()
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
