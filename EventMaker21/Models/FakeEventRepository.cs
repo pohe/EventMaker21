@@ -69,6 +69,33 @@ namespace EventMaker21.Models
             });
         }
 
+        public void Update(Event @event)
+        {
+            if (@event != null)
+            {
+                foreach (Event v in GetAllEvents())
+                {
+                    if (v.Id == @event.Id)
+                    {
+                        v.Name = @event.Name;
+                        v.Description = @event.Description;
+                        v.City = @event.City;
+                        v.DateTime = @event.DateTime;
+                    }
+                }
+            }
+        }
+
+        public Event GetEvent(int id)
+        {
+            foreach (Event v in events)
+            {
+                if (v.Id == id)
+                    return v;
+            }
+            return new Event();
+        }
+
         public void AddEvent(Event ev)
         {
             ev.Id = events.Count == 0 ? 1 : events.Max(x => x.Id) + 1;

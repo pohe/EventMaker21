@@ -1,4 +1,4 @@
-﻿@page
+﻿@page 
 @using EventMaker21.Models
 @model EventMaker21.Pages.Events.IndexModel
 @{
@@ -49,6 +49,7 @@
             <td>
                 @item.DateTime.ToShortDateString() @item.DateTime.ToShortTimeString()
             </td>
+            <td > <a asp-page="EditEvent" asp-route-id="@item.Id">Edit event </a></td>
         </tr>
     }
     </tbody>
