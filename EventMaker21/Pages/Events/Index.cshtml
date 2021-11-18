@@ -1,5 +1,7 @@
 ﻿@page 
 @using EventMaker21.Models
+@using EventMaker21.Interfaces
+@inject IEventRepository mitRepo
 @model EventMaker21.Pages.Events.IndexModel
 @{
     ViewData["Title"] = "Index";
@@ -7,9 +9,18 @@
 
 <h1>Index  -  oversigt over events i Danmark</h1>
 
-<p>Der er @Model.Events.Count events i Danmark registreret i systemet</p>
+<p>Der er @mitRepo.GetAllEvents().Count events i Danmark registreret i systemet</p>
 
 <h2><a asp-page="CreateEvent" >Create Event</a></h2>
+
+<form method="get">
+    <p>
+        Search: <input type="text" asp-for="FilterCriteria"/>
+        <input type="submit"  value="Search/Filter"/>
+    </p>
+
+</form>
+
 <table class="table">
     <thead>
     <tr>

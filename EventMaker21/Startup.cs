@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EventMaker21.Interfaces;
+using EventMaker21.Services;
 
 namespace EventMaker21
 {
@@ -24,6 +26,8 @@ namespace EventMaker21
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            //services.AddSingleton<IEventRepository, FakeEventRepository>();
+            services.AddTransient<IEventRepository, JsonEventRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

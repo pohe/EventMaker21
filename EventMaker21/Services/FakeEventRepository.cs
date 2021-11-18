@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using EventMaker21.Interfaces;
+using EventMaker21.Models;
 
-namespace EventMaker21.Models
+namespace EventMaker21.Services
 {
-    public class FakeEventRepository
+    public class FakeEventRepository: IEventRepository
     {
         private List<Event> events;
 
-        private static FakeEventRepository _instance;
+        //private static FakeEventRepository _instance;
 
-        public static FakeEventRepository Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new FakeEventRepository();
-                }
+        //public static FakeEventRepository Instance
+        //{
+        //    get
+        //    {
+        //        if (_instance == null)
+        //        {
+        //            _instance = new FakeEventRepository();
+        //        }
+        //        return _instance;
+        //    }
+        //}
 
-                return _instance;
-            }
-        }
-
-        private FakeEventRepository()
+        public FakeEventRepository()
         {
             events = new List<Event>();
             events.Add(new Event()
@@ -68,8 +68,9 @@ namespace EventMaker21.Models
                 DateTime = new DateTime(2020, 10, 3, 16, 0, 0)
             });
         }
+        
 
-        public void Update(Event @event)
+        public void UpdateEvent(Event @event)
         {
             if (@event != null)
             {
@@ -123,5 +124,18 @@ namespace EventMaker21.Models
             return events.ToList();
         }
 
+        public List<Event> FilterEvents(string filterCriteria)
+        {
+            List<Event> filteredList = new List<Event>();
+            foreach (Event ev in events)
+            {
+                if (ev.City.Contains(filterCriteria) || ev.Name.Contains(filterCriteria) || ev.Description.Contains(filterCriteria))
+                {
+                    filteredList.Add(ev);
+                }
+            }
+
+            return filteredList;
+        }
     }
 }
