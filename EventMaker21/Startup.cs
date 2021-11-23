@@ -26,8 +26,9 @@ namespace EventMaker21
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            //services.AddSingleton<IEventRepository, FakeEventRepository>();
-            services.AddTransient<IEventRepository, JsonEventRepository>();
+            services.AddSingleton<IEventRepository, FakeEventRepository>();
+            services.AddSingleton<ICountryRepository, FakeCountryRepository>();
+            //services.AddTransient<IEventRepository, JsonEventRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -10,8 +10,8 @@ namespace EventMaker21.Services
 {
     public class JsonEventRepository: IEventRepository
     {
-        string JsonFileName = @"C:\Users\EASJ\OneDrive - Zealand Sjællands Erhvervsakademi(1)\Dokumenter\UV\SWC2021E\myapps\EventMaker21\EventMaker21\Data\JsonEvents.json";
-        //string JsonFileName = @"Data\JsonEvents.json";
+        //string JsonFileName = @"C:\Users\EASJ\OneDrive - Zealand Sjællands Erhvervsakademi(1)\Dokumenter\UV\SWC2021E\myapps\EventMaker21\EventMaker21\Data\JsonEvents.json";
+        string JsonFileName = @"Data\JsonEvents.json";
         public List<Event> GetAllEvents()
         {
             return JsonFileReader.ReadJson(JsonFileName);
