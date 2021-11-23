@@ -13,5 +13,6 @@ namespace EventMaker21.Interfaces
         void AddEvent(Event ev);
         void UpdateEvent(Event evt);
         List<Event> FilterEvents(string filterCriteria);
+        List<Event> SearchEventByCode(string code);
     }
 }

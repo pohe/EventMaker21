@@ -2,6 +2,7 @@
 @using EventMaker21.Models
 @using EventMaker21.Interfaces
 @inject IEventRepository mitRepo
+@inject ICountryRepository myCountryRepo
 @model EventMaker21.Pages.Events.IndexModel
 @{
     ViewData["Title"] = "Index";
@@ -23,23 +24,26 @@
 
 <table class="table">
     <thead>
-    <tr>
-        <th>
-            Id
-        </th>
-        <th>
-            Name
-        </th>
-        <th>
-            Description
-        </th>
-        <th>
-            City
-        </th>
-        <th>
-            Date
-        </th>
-    </tr>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Date
+            </th>
+        </tr>
     </thead>
     <tbody>
     @foreach (var item in Model.Events)
@@ -55,12 +59,15 @@
                 @item.Description
             </td>
             <td>
+                @myCountryRepo.GetCountry(item.CountryCode).Name
+            </td>
+            <td>
                 @item.City
             </td>
             <td>
                 @item.DateTime.ToShortDateString() @item.DateTime.ToShortTimeString()
             </td>
-            <td > <a asp-page="EditEvent" asp-route-id="@item.Id">Edit event </a></td>
+            <td> <a asp-page="EditEvent" asp-route-id="@item.Id">Edit event </a></td>
         </tr>
     }
     </tbody>

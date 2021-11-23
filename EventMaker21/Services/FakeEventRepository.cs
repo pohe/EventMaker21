@@ -32,6 +32,7 @@ namespace EventMaker21.Services
                 Id = 1,
                 Name = "Roskilde Festival",
                 Description = " A lot of music",
+                CountryCode ="DK",
                 City = "Roskilde",
                 DateTime = new DateTime(2020, 6, 9, 10, 0, 0)
             });
@@ -40,6 +41,7 @@ namespace EventMaker21.Services
                 Id = 2,
                 Name = "CPH Marathon",
                 Description = " Many Marathon runners",
+                CountryCode = "DK",
                 City = "Copenhagen",
                 DateTime = new DateTime(2020, 3, 6, 9, 30, 0)
             });
@@ -49,6 +51,7 @@ namespace EventMaker21.Services
                 Name = "CPH Distorsion",
                 Description = " A lot of beers",
                 City = "Copenhagen",
+                CountryCode = "DK",
                 DateTime = new DateTime(2019, 6, 4, 14, 0, 0)
             });
             events.Add(new Event()
@@ -57,6 +60,7 @@ namespace EventMaker21.Services
                 Name = "Demo Day",
                 Description = "Project Presentation",
                 City = "Roskilde",
+                CountryCode = "DK",
                 DateTime = new DateTime(2020, 6, 9, 9, 0, 0)
             });
             events.Add(new Event()
@@ -65,6 +69,7 @@ namespace EventMaker21.Services
                 Name = "VM Badminton",
                 Description = "Badminton",
                 City = "Århus",
+                CountryCode = "DK",
                 DateTime = new DateTime(2020, 10, 3, 16, 0, 0)
             });
         }
@@ -135,6 +140,19 @@ namespace EventMaker21.Services
                 }
             }
 
+            return filteredList;
+        }
+
+        public List<Event> SearchEventByCode(string code)
+        {
+            List<Event> filteredList = new List<Event>();
+            foreach (Event ev in events)
+            {
+                if (ev.CountryCode == code)
+                {
+                    filteredList.Add(ev);
+                }
+            }
             return filteredList;
         }
     }

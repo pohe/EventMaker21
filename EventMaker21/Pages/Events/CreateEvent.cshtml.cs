@@ -7,6 +7,7 @@ using EventMaker21.Models;
 using EventMaker21.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace EventMaker21.Pages.Events
 {
@@ -17,11 +18,16 @@ namespace EventMaker21.Pages.Events
         [BindProperty]
         public Event Event { get; set; }
 
-        public CreateEventModel(IEventRepository repository)
+        public SelectList CountryCodes { get; set; }
+
+
+        public CreateEventModel(IEventRepository repository, ICountryRepository cRepo)
         {
             //repo = new FakeEventRepository();
             //repo = FakeEventRepository.Instance;
             repo = repository;
+            List<Country> countries = cRepo.GetAllCountries();
+            CountryCodes = new SelectList(countries, "Code", "Name");
         }
 
         public IActionResult OnGet()  //Når der hentes

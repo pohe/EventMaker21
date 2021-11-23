@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,9 @@ namespace EventMaker21.Models
     public class Event
     {
         public int Id { get; set; }
+
+        [DisplayName("Landekode")]
+        public string CountryCode { get; set; }
 
         [Required(ErrorMessage = "Name is required"), MaxLength(30)]
         public string Name { get; set; }

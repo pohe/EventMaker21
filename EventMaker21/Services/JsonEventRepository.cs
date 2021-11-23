@@ -36,5 +36,10 @@ namespace EventMaker21.Services
         {
             throw new NotImplementedException();
         }
+
+        public List<Event> SearchEventByCode(string code)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

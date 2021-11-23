@@ -16,6 +16,7 @@ namespace EventMaker21.Services
             countries.Add(new Country() { Code = "FR", Name = "France" });
             countries.Add(new Country() { Code = "DK", Name = "Denmark" });
             countries.Add(new Country() { Code = "SP", Name = "Spain" });
+            countries.Add(new Country() { Code = "SE", Name = "Sweeden" });
         }
         public List<Country> GetAllCountries()
         {
