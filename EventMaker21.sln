@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventMaker21", "EventMaker21\EventMaker21.csproj", "{DCE93268-3208-4C2C-92E7-8B912761BC67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEventMaker", "TestEventMaker\TestEventMaker.csproj", "{838C345B-062F-4AC8-AC90-77E4B54B3CD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventMakerTest", "EventMakerTest\EventMakerTest.csproj", "{36EFF0E0-3F29-4EED-B448-391AA5C3B09E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{DCE93268-3208-4C2C-92E7-8B912761BC67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE93268-3208-4C2C-92E7-8B912761BC67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE93268-3208-4C2C-92E7-8B912761BC67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{838C345B-062F-4AC8-AC90-77E4B54B3CD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{838C345B-062F-4AC8-AC90-77E4B54B3CD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{838C345B-062F-4AC8-AC90-77E4B54B3CD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{838C345B-062F-4AC8-AC90-77E4B54B3CD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36EFF0E0-3F29-4EED-B448-391AA5C3B09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36EFF0E0-3F29-4EED-B448-391AA5C3B09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36EFF0E0-3F29-4EED-B448-391AA5C3B09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36EFF0E0-3F29-4EED-B448-391AA5C3B09E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

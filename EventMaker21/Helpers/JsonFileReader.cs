@@ -15,5 +15,11 @@ namespace EventMaker21.Helpers
             string jsonString = File.ReadAllText(jsonFileName);
             return JsonSerializer.Deserialize<List<Event>>(jsonString);
         }
+
+        public static List<Country> ReadJsonCountry(string jsonFileName)
+        {
+            string jsonString = File.ReadAllText(jsonFileName);
+            return JsonSerializer.Deserialize<List<Country>>(jsonString);
+        }
     }
 }

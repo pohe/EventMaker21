@@ -24,7 +24,26 @@ namespace EventMaker21.Services
 
         public void AddEvent(Event ev)
         {
-            throw new NotImplementedException();
+            List<Event> events = GetAllEvents();
+
+            List<int> eventsIds = new List<int>();
+
+            foreach (var evt in events)
+            {
+                eventsIds.Add(evt.Id);
+            }
+
+            if (eventsIds.Count != 0)
+            {
+                int start = eventsIds.Max();
+                ev.Id = start + 1;
+            }
+            else
+            {
+                ev.Id = 1;
+            }
+            events.Add(ev);
+            JsonFileWritter.WriteToJson(events, JsonFileName);
         }
 
         public void UpdateEvent(Event evt)

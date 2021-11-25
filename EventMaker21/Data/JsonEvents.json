@@ -1,6 +1,7 @@
 [
   {
     "Id": 1,
+    "CountryCode": null,
     "Name": "Roskilde Festival",
     "Description": " A lot of music ",
     "City": "Roskilde",
@@ -8,10 +9,18 @@
   },
   {
     "Id": 2,
+    "CountryCode": null,
     "Name": "CPH Marathon",
     "Description": " Runners from other           countries",
     "City": "Copenhagen",
     "DateTime": "2020-10-25T08:55:00"
+  },
+  {
+    "Id": 3,
+    "CountryCode": "FR",
+    "Name": "Vm i dart",
+    "Description": "KAste med pile",
+    "City": "Paris",
+    "DateTime": "2021-11-26T17:23:00"
   }
 ]
-
